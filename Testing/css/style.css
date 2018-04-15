@@ -5,3 +5,16 @@ body .logo {
 body .bck {
     width: 100%;
 }
+
+body .col-sm-8 {
+    flex: 1;
+    display: flex;
+}
+
+body h4 {
+    display: flex;
+}
+
+body .col-sm-2 {
+    padding: 0;
+}
