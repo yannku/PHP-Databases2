@@ -52,8 +52,8 @@ body .bck {
     width: 100%;
 }
 
-body .row {
-    text-align: center;
+body .cl {
+    text-align: left;
 }
 
 h4 {
@@ -82,4 +82,8 @@ h5, h6 {
 .info {
     text-align: left;
     display: flex;
+}
+
+#eprofile {
+    text-align: right;
 }
