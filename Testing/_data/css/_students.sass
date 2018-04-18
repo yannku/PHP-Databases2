@@ -2,24 +2,54 @@
 h4
     display: flex
 
-.col-sm-2
+.col-sm-3
     padding: 0
 
 
 .bck
     width: 100%
 
+.overlay
+    opacity: 0
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    height: 100%
+    width: 100%
+    transition: .5s ease
+    background-color: black
+
+    &:hover
+        opacity: .5
+
+    .text
+
+        color: white
+        font-size: 20px
+        position: absolute
+        top: 80%
+        left: 50%
+        transform: translate(-50%, -50%)
+        -ms-transform: translate(-50%, -50%)
+        text-align: center
+
+
+
 h5, h6
     text-align: left
     padding: 0
 
 .prof
-    border-radius: 50%
-    width: 50%
+    width: 100%
     text-align: left
 .info
     text-align: left
     display: flex
+.name
+    background: gray
+    text-align: center
 
 #eprofile
     text-align: right

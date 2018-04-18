@@ -1,17 +1,17 @@
-body .sidenav {
+.sidenav {
     height: 100%;
-    width: 0;
+    width: 300px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
-    left: 0;
+    left: -300px;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
 
-body .sidenav a {
+.sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 15px;
@@ -20,11 +20,11 @@ body .sidenav a {
     transition: 0.3s;
 }
 
-body .sidenav a:hover {
+.sidenav a:hover {
     color: #f1f1f1;
 }
 
-body .sidenav .closebtn {
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -32,40 +32,93 @@ body .sidenav .closebtn {
     margin-left: 50px;
 }
 
+#toggle-sidenav:checked ~ .sidenav {
+    left: 0;
+}
+
 @media screen {
-    body {
-        max-height: 450px;
-    }
-    body .sidenav {
+    max-height: 450px;
+    .sidenav {
         padding-top: 15px;
     }
-    body .sidenav a {
-        font-size: 13px;
+    .sidenav a {
+        font-size: 15px;
     }
 }
 
-body .logo {
+.tnav {
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.lnav {
+    display: flex;
+    align-items: center;
+}
+
+.lnav label {
+    margin-bottom: 0;
+    padding: 0 1em;
+}
+
+.logo {
     width: 50%;
 }
 
-body .bck {
+.homeimg {
     width: 100%;
+    margin-top: 4em;
 }
 
 body .cl {
     text-align: left;
 }
 
+.hidden {
+    display: none;
+}
+
 h4 {
     display: flex;
 }
 
-.col-sm-2 {
+.col-sm-3 {
     padding: 0;
 }
 
 .bck {
     width: 100%;
+}
+
+.overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    background-color: black;
+}
+
+.overlay:hover {
+    opacity: .5;
+}
+
+.overlay .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 h5, h6 {
@@ -74,14 +127,18 @@ h5, h6 {
 }
 
 .prof {
-    border-radius: 50%;
-    width: 50%;
+    width: 100%;
     text-align: left;
 }
 
 .info {
     text-align: left;
     display: flex;
+}
+
+.name {
+    background: gray;
+    text-align: center;
 }
 
 #eprofile {
