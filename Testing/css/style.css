@@ -104,6 +104,28 @@ body .cl {
     padding-bottom: 5em;
 }
 
+.login {
+    align-items: center;
+}
+
+.login .input-group {
+    padding-bottom: 1em;
+}
+
+.login img {
+    width: 100%;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+form img {
+    width: 30%;
+}
+
+form .input-group {
+    padding-top: 1em;
+}
+
 .stdcourse {
     display: flex;
     padding-left: 0;

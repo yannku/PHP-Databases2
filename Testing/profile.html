@@ -5,195 +5,105 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link type="text/css" rel="stylesheet" href="css\bootstrap.min.css" />
         <link type="text/css" rel="stylesheet" href="css\style.css" />
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>        <script src="js\bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js\bootstrap.bundle.min.js"></script>
         <script src="js\bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
+
         <title>MCAST ICA</title>
-        <style>
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            }
 
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 15px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
-        }
-        </style>
-        <title></title>
     </head>
     <body>
+        <input type="checkbox" id="toggle-sidenav" class="hidden">
+        <label class="sidenav-bg" for="toggle-sidenav"></label>
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <label class="closebtn" for="toggle-sidenav">&times;</label>
             <a href="index.html">Home</a>
             <a href="#">About</a>
             <a href="courselist.html">Courses</a>
-            <a href="#">Map</a>
+            <a href="map.html">Map</a>
             <a href="students.html">Our Students</a>
-            <a class="dropdown-btn">Student links
+            <a class="dropdown-btn" data-toggle="#student-links">Student links
                 <i class="fas fa-caret-down"></i>
             </a>
-            <div class="dropdown-container">
+            <div class="dropdown-container" id="student-links">
               <a href="#">Library</a>
-              <a href="#">Timetables</a>
+              <a href="timetable.html">Timetables</a>
               <a href="#">Academic Links</a>
               <a href="#">Forms</a>
               <a href="#">Academic Calendar</a>
               <a href="#">Cancelled Lectures</a>
             </div>
-            <a href="#">Login</a>
-            <a href="#">Vacancies</a>
+            <a href="login.html">Login</a>
+            <a href="jobslistsica.html">Vacancies</a>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <span style="font-size:25px;cursor:pointer" onclick="openNav()">
-                        <i class="fas fa-bars"></i>
-                    </span>
-                    <img class="logo" id="logo" src="Images\solid_normal.png" alt="">
+
+
+        <div class="container navmargin">
+            <div class="row tnav">
+                <div class="col-sm-3 lnav">
+                        <label style="font-size:25px;" for="toggle-sidenav">
+                            <i class="icon fas fa-bars"></i>
+                        </label>
+                        <img class="logo" id="logo" src="Images\solid_normal.png" alt="">
                 </div>
                 <div class="col-sm-9">
                 </div>
             </div>
+        </div>
+        <div class="container">
             <div class="row">
-                <div class="col-sm-1"> </div>
-                <div class="col-sm-4">
-                    <h5>John Smith</h5>
-                </div>
 
                 <div class="col-sm-3">
-                    <h5>Projects</h5>
-                </div>
-                <div class="col-sm-3">
+                    <img src="Images\profile.jpg" class="porprof" alt="">
 
                 </div>
-                <div class="col-sm-1"></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
-
-                </div>
-                <div class="col-sm-2">
-                    <img class="prof" src="Images\profile.jpg" alt="">
-                </div>
-                <div class="col-sm-2">
-                    <div class="">
-                        <div class="info">
-                            <i class="fas fa-envelope"></i>
-                            <p>johnsmith@mail.com</p>
-                        </div>
-                        <div class="info">
-                            <i class="fas fa-mobile"></i>
-                            <p>99885588</p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-1">
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
-
-                </div>
-                <div class="col-sm-4">
-                    <h6>About</h6>
+                <div class="col-sm-9">
+                    <h5 class="name">John Smith</h5>
                     <p class="info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Morbi tempus quis ipsum a facilisis. Etiam hendrerit blandit dolor, non tincidunt diam laoreet sed.
                         Pellentesque porttitor maximus nunc, sed faucibus risus condimentum nec. Aenean quis mauris nunc.
                         Ut bibendum convallis blandit.</p>
+                    <div class="coninfo">
+                        <i class="fas fa-envelope"></i>
+                        <p class="email">johnsmith@mail.com</p>
+                    </div>
+                    <a href="editprofile.html"><button type="button" class="btn btn-dark">Edit Profile</button></a>
+                </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>My Projects</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>Jobs</p>
+                    </div>
+                </div>
 
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\website.png" alt="">
-                </div>
-                <div class="col-sm-1">
+                <div class="row bck">
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="Images\website.png" alt="">
+                    </div>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
-
-                </div>
-                <div class="col-sm-2">
-
-                </div>
-                <div class="col-sm-2">
-                    <a href="editprofile.html"> <button class="btn" type="button" name="button">Edit Profile</button></a>
-                </div>
-                <div class="col-sm-3">
-                    <h6>Jobs</h6>
-                </div>
-                <div class="col-sm-3">
-
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
 
                 </div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <p>Job Title</p>
-                    <p>Company Name</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi tempus quis ipsum a facilisis. Etiam hendrerit blandit dolor,
-                    non tincidunt diam laoreet sed. </p>
-                </div>
-                <div class="col-sm-2">
-                    <img class="bck" src="Images\logo-ex-7.png" alt="">
-                </div>
-                <div class="col-sm-1"></div>
             </div>
         </div>
         <script type="text/javascript" src="js/website.js"></script>
