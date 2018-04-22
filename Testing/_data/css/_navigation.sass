@@ -2,7 +2,7 @@
 
 .sidenav-bg
     background-color: black
-    opacity: 0.2
+    opacity: 0.5
     display: none
     position: fixed
     top: 0
@@ -40,6 +40,10 @@
         right: 25px
         font-size: 36px
         margin-left: 50px
+    .dropdown-container
+
+        a
+            padding: 8px 8px 8px 50px
 
 #toggle-sidenav:checked
     ~ .sidenav
@@ -55,6 +59,17 @@
         padding-top: 15px
     .sidenav a
         font-size: 15px
+.dropdown-btn
+    padding: 8px 8px 8px 32px
+    text-decoration: none
+    font-size: 15px
+    color: #818181
+    display: block
+    transition: 0.3s
+
+    &:hover
+        color: #f1f1f1
+
 
 .tnav
     background-color: rgba(255,255,255, 0.5)
