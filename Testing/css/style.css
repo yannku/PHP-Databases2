@@ -143,6 +143,10 @@ form .input-group {
     padding-top: 1em;
 }
 
+.col-sm-4 .corimg {
+    width: 100%;
+}
+
 .stdcourse {
     display: flex;
     padding-left: 0;
