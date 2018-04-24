@@ -109,8 +109,12 @@
     padding: 20px;
 }
 
-body .cl {
-    text-align: left;
+body .corimg {
+    position: 50px;
+}
+
+body .title {
+    align-items: center;
 }
 
 #site-content {
@@ -281,4 +285,8 @@ h5, h6 {
 
 #eprofile {
     text-align: right;
+}
+
+.col {
+    padding: 10px;
 }
