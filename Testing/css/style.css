@@ -1,3 +1,16 @@
+.bg-light {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    z-index: 500;
+}
+
+.topnav {
+    align-items: center;
+}
+
+.topnav .navbar-left {
+    align-items: center;
+}
+
 .sidenav-bg {
     background-color: black;
     opacity: 0.5;
@@ -83,27 +96,8 @@
     color: #f1f1f1;
 }
 
-.tnav {
-    background-color: rgba(255, 255, 255, 0.5);
-    overflow: hidden;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-}
-
-.lnav {
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-}
-
-.lnav label {
-    margin-bottom: 0;
-    padding: 0 1em;
-}
-
 .logo {
-    width: 50%;
+    height: 2.5em;
 }
 
 .homeimg {
@@ -117,6 +111,10 @@
 
 body .cl {
     text-align: left;
+}
+
+#site-content {
+    margin-top: 4rem;
 }
 
 .hidden {
@@ -170,11 +168,12 @@ form .input-group {
 }
 
 .welhome .col-sm-12 .welcome {
-    font-size: 6em;
+    font-size: 5em;
     background-image: url("../Images/MCAST005.jpg");
     background-repeat: no-repeat;
-    padding: 2em 0;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 10% 0;
     text-align: center;
     color: white;
 }
@@ -184,7 +183,17 @@ form .input-group {
 }
 
 .welhome .col-sm-6 img {
+    display: block;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .welhome .col-sm-12 {
+        padding: 0;
+    }
+    .welhome .col-sm-12 .welcome {
+        font-size: 2.5em;
+    }
 }
 
 .stdcourse {
