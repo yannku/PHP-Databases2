@@ -2,9 +2,60 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link type="text/css" rel="stylesheet" href="css\bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css\style.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>        <script src="js\bootstrap.bundle.min.js"></script>
+        <script src="js\bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <title>MCAST ICA</title>
+
     </head>
     <body>
 
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="courselist.html">Courses</a>
+                <a href="map.html">Map</a>
+                <a href="students.html">Our Students</a>
+                <label class="dropdown-btn" data-toggle="#student-links">Student links
+                    <i class="fas fa-caret-down"></i>
+                </label>
+                <div class="dropdown-container" id="student-links">
+                  <a href="http://mcast.edu.mt/searchOurCatalogue">Library</a>
+                  <a href="timetable.html">Timetables</a>
+                  <a href="#">Academic Links</a>
+                  <a href="forms.html">Forms</a>
+                  <a href="calender.html">Academic Calendar</a>
+                  <a href="sick.html">Cancelled Lectures</a>
+                </div>
+                <a href="login.html">Login</a>
+                <a href="jobslistsica.html">Vacancies</a>
+            </div>
+
+
+            <div id="main" class="container navmargin">
+                <div class="row tnav">
+                    <div class="col-sm-3 lnav">
+                            <span onclick="openNav()">open</span>
+                            <label style="font-size:25px;" for="toggle-sidenav">
+                                <i class="icon fas fa-bars"></i>
+                            </label>
+                            <img class="logo" id="logo" src="Images\solid_normal.png" alt="">
+                    </div>
+                    <div class="col-sm-9">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+            </div>
+
+        </div>
+        <script type="text/javascript" src="js\admin.js"></script>
+        <script defer src="js\fontawesome-all.js"></script>
     </body>
 </html>
