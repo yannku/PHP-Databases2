@@ -19,38 +19,50 @@
         <div id="mySidenav" class="sidenav">
             <label class="closebtn" for="toggle-sidenav">&times;</label>
             <a href="index.html">Home</a>
-            <a href="#">About</a>
+            <a href="about.html">About</a>
             <a href="courselist.html">Courses</a>
             <a href="map.html">Map</a>
             <a href="students.html">Our Students</a>
-            <a class="dropdown-btn" data-toggle="#student-links">Student links
+            <label class="dropdown-btn" data-toggle="#student-links">Student links
                 <i class="fas fa-caret-down"></i>
-            </a>
+            </label>
             <div class="dropdown-container" id="student-links">
-              <a href="#">Library</a>
+              <a href="http://mcast.edu.mt/searchOurCatalogue">Library</a>
               <a href="timetable.html">Timetables</a>
               <a href="#">Academic Links</a>
-              <a href="#">Forms</a>
-              <a href="#">Academic Calendar</a>
-              <a href="#">Cancelled Lectures</a>
+              <a href="forms.html">Forms</a>
+              <a href="calender.html">Academic Calendar</a>
+              <a href="sick.html">Cancelled Lectures</a>
             </div>
             <a href="login.html">Login</a>
             <a href="jobslistsica.html">Vacancies</a>
         </div>
 
-        <div class="container navmargin">
-            <div class="row tnav">
-                <div class="col-sm-3 lnav">
-                        <label style="font-size:25px;" for="toggle-sidenav">
-                            <i class="icon fas fa-bars"></i>
-                        </label>
-                        <img class="logo" id="logo" src="Images\solid_normal.png" alt="">
+
+        <nav class="navbar fixed-top bg-light">
+            <div class="container topnav">
+
+                <div class="navbar-left d-flex align-items-center">
+                    <label class="navbar-toggler m-0 p-0 "  for="toggle-sidenav">
+                        <i class="icon fas fa-bars"></i>
+                    </label>
+                    <div class="navbar-brand m-0 p-0">
+                        <img class="logo" src="Images\solid_normal.png" alt="">
+                    </div>
                 </div>
-                <div class="col-sm-9">
+
+                <div class="nav navbar-nav navbar-right  ">
+                    <div class="dropdown">
+                        <button class="dropbtn"><i class="icon fas fa-user-circle" ></i></button>
+                        <div class="dropdown-content">
+                           <a href="login.html">Login</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-        <div class="container">
+        </nav>
+        <main class="container" id="site-content">
             <div class="row">
 
                 <div class="col-sm-12 stdcourse">
@@ -159,7 +171,7 @@
                 </div>
 
             </div>
-        </div>
+        </main>
         <script type="text/javascript" src="js/website.js"></script>
         <script defer src="js\fontawesome-all.js"></script>
     </body>

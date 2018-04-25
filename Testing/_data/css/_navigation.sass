@@ -1,7 +1,7 @@
 //main:style.sass
 
 .bg-light
-    background-color: transparentize(#fff, 0.75) !important
+    background-color: transparentize(#fff,.4) !important
     z-index: 500
 
 .topnav
@@ -9,7 +9,7 @@
     .navbar-left
         align-items: center
 .sidenav-bg
-    background-color: black
+    background-color: #3A393F
     opacity: 0.5
     display: none
     position: fixed
@@ -26,7 +26,7 @@
     z-index: 1001
     top: 0
     left: -300px
-    background-color: #111
+    background-color: #3A393F
     overflow-x: hidden
     transition: 0.5s
     padding-top: 60px
@@ -35,12 +35,12 @@
         padding: 8px 8px 8px 32px
         text-decoration: none
         font-size: 15px
-        color: #818181
+        color: #F3F3F3
         display: block
         transition: 0.3s
 
         &:hover
-            color: #f1f1f1
+            color: #BA74BB
 
     .closebtn
         position: absolute
@@ -49,7 +49,7 @@
         font-size: 36px
         margin-left: 50px
         &:hover
-            color: #f1f1f1
+            color: #BA74BB
 
     .dropdown-container
 
@@ -74,15 +74,19 @@
     padding: 8px 8px 8px 32px
     text-decoration: none
     font-size: 15px
-    color: #818181
+    color: #F3F3F3
     display: block
     transition: 0.3s
 
     &:hover
-        color: #f1f1f1
+        color: #BA74BB
 
 
-
+.icon
+    font-size: 1.25em
+    color: #3A393F
+    &:hover
+        color: #BA74BB
 
 
 .logo
@@ -94,3 +98,34 @@
 #main
     transition: margin-left .5s
     padding: 20px
+
+.dropdown
+    position: relative
+    display: inline-block
+
+    .dropbtn
+        background-color: transparent
+        outline: none
+        border: none
+
+.dropdown-content
+    display: none
+    position: absolute
+    background-color: #f3f3f3
+    min-width: 50px
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+    z-index: 1
+
+    a
+        color:  #3A393F
+        font-size: 15px
+        padding: 12px 16px
+        text-decoration: none
+        display: block
+        &:hover
+            color: #BA74BB
+
+.dropdown:hover .dropdown-content
+    display: block
+
+.dropdown:hover .dropbtn
