@@ -1,0 +1,76 @@
+//main:style.sass
+.stdcourse
+    display: flex
+    padding-left: 0
+    background-color: #BA74BB
+    overflow: hidden
+
+
+    h4
+        padding: 1em 0
+        color: #f3f3f3
+
+
+.bck
+    padding: 0
+    img
+        width: 100%
+
+.overlay
+    opacity: 0
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    height: 100%
+    width: 100%
+    transition: .5s ease
+    background-color: rgba(0, 0, 0, 0.5)
+
+    &:hover
+        opacity: 1
+
+    .text
+
+        color: #BA74BB
+        font-size: 20px
+        position: absolute
+        top: 80%
+        left: 50%
+        transform: translate(-50%, -50%)
+        -ms-transform: translate(-50%, -50%)
+        text-align: center
+
+
+
+h5, h6
+    text-align: left
+    padding: 0
+
+.prof
+    width: 100%
+    text-align: left
+
+.porprof
+    width: 80%
+
+.info
+    text-align: left
+    display: flex
+
+.coninfo
+    text-align: left
+    display: flex
+    align-items: center
+    svg
+        font-size: 1.25em
+    .email
+        margin-bottom: 0
+        padding: 0 1em
+
+.name
+    text-align: left
+
+#eprofile
+    text-align: right
