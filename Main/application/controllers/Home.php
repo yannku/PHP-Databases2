@@ -1,12 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
 
-    public function index()
-	{
-		$this->load->view('templates/header');
-        $this->load->view('home');
-        $this->load->view('templates/footer');
+    // magic method to load the parent class
+	function __construct() {
+		// without this, we won't be able to
+		// $this->build our pages.
+		parent::__construct();
 	}
+
+    public function index()	{
+        $data = array(
+			'name'  => 'MCAST',
+		);
+
+        $this->build('home', $data);
+
+	}
+
+
+
 }
