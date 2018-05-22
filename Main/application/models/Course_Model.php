@@ -34,6 +34,24 @@ class Course_Model extends CI_Model {
 
 	}
 
+    public function all_courses_dropdown() {
+
+		// these lines are preparing the
+		// query to be run.
+		$courses = $this->db->select('id, c_name')
+            				 ->order_by('c_name', 'asc')
+                             ->get('tbl_courses');
+
+        $array = [];
+        foreach ($courses->result_array() as $row)
+        {
+            $array[$row['id']] = $row['c_name'];
+        }
+
+        return $array;
+
+	}
+
     public function all_applications() {
 
         // these lines are preparing the

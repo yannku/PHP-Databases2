@@ -21,7 +21,7 @@
 			<td><?=$course['c_duration'];?></td>
 			<td><?=$course['c_mqf'];?></td>
 			<td><?=anchor("courses/edit_course/{$course['id']}", "Edit");?></td>
-			<td><?=anchor("", "View");?></td>
+			<td><?=anchor("courses/view_course/{$course['id']}", "View");?></td>
 		</tr>
 <?php endforeach; ?>
 

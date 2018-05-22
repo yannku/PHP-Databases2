@@ -6,6 +6,8 @@ class Courses extends MY_Controller {
     function __construct()
     {
         parent:: __construct();
+        // if the role shouldn't see this controller (permiassions)
+        // show 404;
     }
 
     public function index()	{
@@ -28,7 +30,7 @@ class Courses extends MY_Controller {
             }
 
     		// load the form helper to get the function isndie the file otherwise known as a plugin
-    		$this->load->helper('form');
+    		$this->load->helper('form'); $this->load->model('course_model');
     		// this array will contain all the inputs we will need
     		$data = array(
     			'properties'	=> array(
@@ -36,9 +38,10 @@ class Courses extends MY_Controller {
     				'hidden'	=> NULL
     			),
     			'form' => $this->course_form()
+
     		);
     		//the page itself
-    		$this->build('form', $data);
+    		$this->build('add_form', $data);
 
     }
 
@@ -76,6 +79,19 @@ class Courses extends MY_Controller {
 		$this->build('form', $data);
 
 	}
+
+    function view_course($id)
+    {
+
+        $this->load->model('course_model');
+
+        $data = array(
+			'course'		=> $this->course_model->get_course($id)
+		);
+
+        $this->build('course', $data);
+
+    }
 
     // a directory page for the registered users
 	public function courses() {
@@ -116,16 +132,18 @@ class Courses extends MY_Controller {
                 $this->app_submit();
                 return;
             }
+            // load the form helper to get the function isndie the file otherwise known as a plugin
+    		//$this->load->helper('form');
+            $this->load->model('course_model');
 
-    		// load the form helper to get the function isndie the file otherwise known as a plugin
-    		$this->load->helper('form');
     		// this array will contain all the inputs we will need
     		$data = array(
     			'properties'	=> array(
     				'action'	=> 'courses/course_app/submit',
     				'hidden'	=> NULL
     			),
-    			'form' => $this->app_form()
+    			'form' => $this->app_form(),
+                'dropdown'  => $this->course_model->all_courses_dropdown()
     		);
     		//the page itself
     		$this->build('form', $data);
@@ -183,7 +201,8 @@ class Courses extends MY_Controller {
         // loads the users_model file to use its functions
         $this->load->model('course_model');
 
-        $this->course_model->add_courses($c_name, $c_code, $c_duration, $c_mqf);
+        $id = $this->course_model->add_courses($c_name, $c_code, $c_duration, $c_mqf);
+        // upload image here
 
         echo "Good Job you submitted a form correctly";
 	}
@@ -320,11 +339,6 @@ class Courses extends MY_Controller {
 				'rules' => 'required'
 			),
             array(
-				'field' => 'a_mqf',
-				'label' => 'MQF Level',
-				'rules' => 'required'
-			),
-            array(
 				'field' => 'tbl_courses_id',
 				'label' => 'course',
 				'rules' => 'required'
@@ -347,13 +361,12 @@ class Courses extends MY_Controller {
         $a_mobile               = $this->input->post('a_mobile');
         $a_email                = $this->input->post('a_email');
         $a_nationality          = $this->input->post('a_nationality');
-        $a_mqf                  = $this->input->post('a_mqf' );
         $tbl_courses_id         = $this->input->post('tbl_courses_id' );
 
         // loads the users_model file to use its functions
         $this->load->model('course_model');
 
-        $this->course_model->course_apply($a_name, $a_surname, $a_dob, $a_idnumber, $a_address, $a_mobile, $a_email, $a_nationality, $a_mqf, $tbl_courses_id );
+        $this->course_model->course_apply($a_name, $a_surname, $a_dob, $a_idnumber, $a_address, $a_mobile, $a_email, $a_nationality, $tbl_courses_id );
 
         echo "Good Job you submitted a course application!!";
 	}
@@ -372,7 +385,7 @@ class Courses extends MY_Controller {
 		}
 
         return array(
-                'c_name'          => array(
+                'Course Name'          => array(
                     'type'          => 'text',
                     'placeholder'   => 'Course name',
                     'name'          => 'c_name',
@@ -381,7 +394,7 @@ class Courses extends MY_Controller {
                     'required' 			=> TRUE,
 				    'value'				=> set_value('c_name', $course['c_name'])
                 ),
-                'c_code'          => array(
+                'Course Code'          => array(
                     'type'          => 'text',
                     'placeholder'   => 'Course code',
                     'name'          => 'c_code',
@@ -390,7 +403,7 @@ class Courses extends MY_Controller {
                     'required' 			=> TRUE,
 				    'value'				=> set_value('c_code', $course['c_code'])
                 ),
-                'c_duration'          => array(
+                'Course Duration'          => array(
                     'type'          => 'number',
                     'placeholder'   => '6',
 					'name'          => 'c_duration',
@@ -399,7 +412,7 @@ class Courses extends MY_Controller {
                     'required' 			=> TRUE,
 				    'value'				=> set_value('c_duration', $course['c_duration'])
                 ),
-                'mqf'          => array(
+                'MQF Level'          => array(
                     'type'          => 'number',
                     'placeholder'   => '6',
                     'name'          => 'c_mqf',
@@ -434,7 +447,7 @@ class Courses extends MY_Controller {
 
 		return array(
 
-			'a_name' => array(
+			'Name' => array(
 				'type' 				=> 'text',
 				'name' 				=> 'a_name',
 				'placeholder' 		=> 'Johnny',
@@ -443,7 +456,7 @@ class Courses extends MY_Controller {
 				'required' 			=> TRUE,
 				'value'				=> set_value('a_name', $app['a_name'])
 			),
-			'a_surname' => array(
+			'Surname' => array(
 				'type' 				=> 'text',
 				'name' 				=> 'a_surname',
 				'placeholder' 		=> 'Borg',
@@ -452,7 +465,7 @@ class Courses extends MY_Controller {
 				'required' 			=> TRUE,
 				'value'				=> set_value('a_surname', $app['a_surname'])
 			),
-            'a_dob' => array(
+            'Date of birth' => array(
 				'type' 				=> 'date',
 				'name' 				=> 'a_dob',
 				'placeholder' 		=> '22/10/97',
@@ -461,7 +474,7 @@ class Courses extends MY_Controller {
 				'required' 			=> TRUE,
 				'value'				=> set_value('a_dob', $app['a_dob'])
 			),
-            'a_idnumber' => array(
+            'Id number' => array(
                 'type' 				=> 'text',
                 'name' 				=> 'a_idnumber',
                 'placeholder' 		=> '123659M',
@@ -470,7 +483,7 @@ class Courses extends MY_Controller {
                 'required' 			=> TRUE,
                 'value'				=> set_value('a_idnumber', $app['a_idnumber'])
             ),
-            'a_address' => array(
+            'Address' => array(
                 'type' 				=> 'text',
                 'name' 				=> 'a_address',
                 'placeholder' 		=> 'Triq il-Kbira',
@@ -479,7 +492,7 @@ class Courses extends MY_Controller {
                 'required' 			=> TRUE,
                 'value'				=> set_value('a_address', $app['a_address'])
             ),
-            'a_mobile' => array(
+            'Mobile' => array(
 				'type' 				=> 'number',
 				'name' 				=> 'a_mobile',
 				'placeholder' 		=> '79797979',
@@ -488,7 +501,7 @@ class Courses extends MY_Controller {
 				'required' 			=> TRUE,
 				'value'				=> set_value('a_mobile', $app['a_mobile'])
 			),
-            'a_email' => array(
+            'Email' => array(
 				'type' 				=> 'email',
 				'name' 				=> 'a_email',
 				'placeholder' 		=> 'johnny@cowboy.com.mt',
@@ -497,7 +510,7 @@ class Courses extends MY_Controller {
 				'required' 			=> TRUE,
 				'value'				=> set_value('a_email', $app['a_email'])
 			),
-            'a_nationality' => array(
+            'Nationality' => array(
                 'type' 				=> 'text',
                 'name' 				=> 'a_nationality',
                 'placeholder' 		=> 'Maltese',
@@ -506,16 +519,8 @@ class Courses extends MY_Controller {
                 'required' 			=> TRUE,
                 'value'				=> set_value('a_nationality', $app['a_nationality'])
             ),
-            'a_mqf'          => array(
-                'type'          => 'number',
-                'placeholder'   => '6',
-                'name'          => 'a_mqf',
-                'id'            => 'input-mqf',
-                'class'         => 'form-control',
-                'required' 			=> TRUE,
-                'value'				=> set_value('a_mqf', $app['a_mqf'])
-            ),
-            'tbl_courses_id'          => array(
+
+            'Course'          => array(
                 'type'          => 'number',
                 'placeholder'   => '1',
                 'name'          => 'tbl_courses_id',

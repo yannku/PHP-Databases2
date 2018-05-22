@@ -43,14 +43,14 @@
 
 
             <nav class="navbar fixed-top bg-light">
-                <div class="container topnav">
+                <div class="container-fluid topnav">
 
                     <div class="navbar-left d-flex align-items-center">
                         <label class="navbar-toggler m-0 p-0 "  for="toggle-sidenav">
                             <i class="icon fas fa-bars"></i>
                         </label>
                         <div class="navbar-brand m-0 p-0">
-                            <a href="index.html"><img class="logo" src="Images\solid_normal.png" alt=""></a>
+                            <a href="index.html"><img class="logo" src="<?=base_url('Images\solid_normal.png')?>" alt=""></a>
                         </div>
                     </div>
 
@@ -65,4 +65,4 @@
                     </div>
                 </div>
             </nav>
-            <main class="container welhome" id="site-content">
+            <main class="container-fluid welhome" id="site-content">
