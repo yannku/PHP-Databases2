@@ -34,6 +34,51 @@ class Job_Model extends CI_Model {
 
     }
 
+    public function all_vacancies_public() {
+
+        // these lines are preparing the
+        // query to be run.
+        $this->db->select('*')
+                 ->where('tbl_jroles_id', 2)
+                 ->order_by('j_name', 'asc');
+
+        // run the query using the parameters
+        // above and below.
+        return $this->db->get('tbl_job');
+
+    }
+
+    public function all_vacancies_internal() {
+
+        // these lines are preparing the
+        // query to be run.
+        $this->db->select('*')
+                 ->order_by('j_name', 'asc');
+
+        // run the query using the parameters
+        // above and below.
+        return $this->db->get('tbl_job');
+
+    }
+
+    public function all_jobs_dropdown() {
+
+		// these lines are preparing the
+		// query to be run.
+		$jobs = $this->db->select('id, name')
+            				 ->order_by('name', 'asc')
+                             ->get('tbl_jtype');
+
+        $array = [];
+        foreach ($jobs->result_array() as $row)
+        {
+            $array[$row['id']] = $row['name'];
+        }
+
+        return $array;
+
+	}
+
     public function get_job($id) {
 
         // run a query and return the row immediately

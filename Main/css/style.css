@@ -281,6 +281,10 @@ form .input-group {
     font-size: 2em;
 }
 
+.form-group .spacing {
+    padding: 1em;
+}
+
 .stdcourse {
     display: flex;
     padding-left: 0;

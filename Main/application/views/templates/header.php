@@ -21,10 +21,8 @@
             <label class="sidenav-bg" for="toggle-sidenav"></label>
             <div id="mySidenav" class="sidenav">
                 <label class="closebtn" for="toggle-sidenav">&times;</label>
-                <a href="backend.html">Backend</a>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="<?=site_url('courses/courses');?>">Courses</a>
+                <a href="<?=site_url('home');?>">Home</a>
+                <a href="<?=site_url('courses');?>">Courses</a>
                 <a href="map.html">Map</a>
                 <a href="students.html">Our Students</a>
                 <label class="dropdown-btn" data-toggle="#student-links">Student links
@@ -38,7 +36,8 @@
                   <a href="calender.html">Academic Calendar</a>
                   <a href="sick.html">Cancelled Lectures</a>
                 </div>
-                <a href="jobslistsica.html">Vacancies</a>
+                <a href="<?=site_url('job_list');?>">Vacancies</a>
+                <a href="<?=site_url('login ');?>">Login</a>
             </div>
 
 
@@ -50,17 +49,17 @@
                             <i class="icon fas fa-bars"></i>
                         </label>
                         <div class="navbar-brand m-0 p-0">
-                            <a href="index.html"><img class="logo" src="<?=base_url('Images\solid_normal.png')?>" alt=""></a>
+                            <a href="<?=site_url('home');?>"><img class="logo" src="<?=base_url('Images\solid_normal.png')?>" alt=""></a>
                         </div>
                     </div>
 
-                    <div class="nav navbar-nav navbar-right  ">
+                    <!--<div class="nav navbar-nav navbar-right  ">
                         <div class="dropdown">
                             <button class="dropbtn"><i class="icon fas fa-user-circle" ></i></button>
                             <div class="dropdown-content">
                                <a href="login.html">Login</a>
                             </div>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>

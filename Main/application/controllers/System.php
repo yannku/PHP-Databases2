@@ -6,80 +6,89 @@ class System extends MY_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->library(array('form_validation' => 'fv'));
-    }
+            }
 
     public function login()
 	{
         $data = array(
-            'page_title'    => 'Login',
             'form_action'   => 'login/submit',
-            'form'          => array(
+            'form_inputs'          => array(
                 'Email'         => array(
                     'type'          => 'email',
                     'placeholder'   => 'me@example.com',
                     'name'          => 'email',
-                    'id'            => 'input-email'
+                    'id'            => 'input-email',
+                    'class'         => "input-group form-control"
                 ),
                 'Password'      => array(
                     'type'          => 'password',
                     'placeholder'   => 'password',
                     'name'          => 'password',
-                    'id'            => 'input-password'
+                    'id'            => 'input-password',
+                    'class'         => "input-group form-control"
                 )
             ),
             'buttons'       => array(
                 'submit'        => array(
                     'type'          => 'submit',
-                    'content'       => 'Log In'
+                    'content'       => 'Log In',
+                    'class'         => "btn btn-dark"
                 )
             )
         );
 
-        $this->load->view('system/form', $data);
+        $this->build('login', $data);
 	}
 
     public function register()
 	{
         $data = array(
-            'page_title'    => 'Register',
             'form_action'   => 'register/submit',
-            'form'          => array(
+            'form_inputs'          => array(
 
                 'Name'          => array(
                     'type'          => 'text',
                     'placeholder'   => 'Joseph',
                     'name'          => 'name',
-                    'id'            => 'input-name'
+                    'id'            => 'input-name',
+                    'class'         => "input-group form-control"
                 ),
                 'Surname'       => array(
                     'type'          => 'text',
                     'placeholder'   => 'Borg',
                     'name'          => 'surname',
-                    'id'            => 'input-surname'
+                    'id'            => 'input-surname',
+                    'class'         => "input-group form-control"
                 ),
                 'Email'         => array(
                     'type'          => 'email',
                     'placeholder'   => 'me@example.com',
                     'name'          => 'email',
-                    'id'            => 'input-email'
+                    'id'            => 'input-email',
+                    'class'         => "input-group form-control"
                 ),
                 'Password'      => array(
                     'type'          => 'password',
                     'placeholder'   => 'password',
                     'name'          => 'password',
-                    'id'            => 'input-password'
+                    'id'            => 'input-password',
+                    'class'         => "input-group form-control"
                 ),
+
             ),
+
+            'dropdown'  => $this->system->select_role(),
             'buttons'       => array(
                 'submit'        => array(
                     'type'          => 'submit',
-                    'content'       => 'register'
+                    'content'       => 'register',
+                    'class'         => "btn btn-dark"
                 )
             )
         );
 
-        $this->load->view('system/form', $data);
+        $this->build_back('register', $data);
+
 	}
 
     # The Login Submission page
@@ -146,13 +155,14 @@ class System extends MY_Controller {
         # 2. Retrieve the first set of data
         $email      = $this->input->post('email');
         $password   = $this->input->post('password');
+        $role       = $this->input->post('roles');
 
         # 3. Generate a random keyword for added protection
         # Since the encrypted key is in binary, we should change it to a hex string (0-9, a-f)
         $salt       = bin2hex($this->encryption->create_key(8));
 
         # 3. Add them to the database, and retrieve the ID
-        $id = $this->system->add_user($email, $password, $salt);
+        $id = $this->system->add_user($email, $password, $salt, $role);
 
         # 4. If the ID didn't register, we can't continue.
         if ($id === FALSE)

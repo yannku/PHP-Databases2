@@ -3,13 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class System_Model extends CI_Model {
 
-    public function add_user($email, $password, $salt)
+    public function add_user($email, $password, $salt, $role)
         {
 
             $data = array(
                 'email'       => $email,
                 'password'    => password_hash($salt.$password, CRYPT_BLOWFISH),
-                'salt'        => strrev($salt)
+                'salt'        => strrev($salt),
+                'role_id'     => $role
             );
 
             $this->db->insert('tbl_login', $data);
@@ -129,4 +130,22 @@ class System_Model extends CI_Model {
         $this->db->delete('tbl_login_info', $data);
 
     }
+
+    public function select_role() {
+
+		// these lines are preparing the
+		// query to be run.
+		$courses = $this->db->select('id, name')
+            				 ->order_by('name', 'asc')
+                             ->get('tbl_roles');
+
+        $array = [];
+        foreach ($courses->result_array() as $row)
+        {
+            $array[$row['id']] = $row['name'];
+        }
+
+        return $array;
+
+	}
 }

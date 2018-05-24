@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        
-        <?=anchor('login', 'Click here to log in');?>
-        or
-        <?=anchor('register', 'Register a new account');?>
+<?=form_open($form_action,array('class' => 'form-group'));?>
 
-    </body>
-</html>
+          <div class="row login">
+            <div class="col-sm-7">
+                <img src="<?=base_url('Images\cameraperson.jpg')?>" alt="">
+            </div>
+            <div class="col-sm-5">
+
+<?php foreach ($form_inputs as $input): ?>
+
+
+<?=form_input($input);?>
+        <div class="spacing">
+
+        </div>
+<?php endforeach; ?>
+<?=form_button($buttons['submit'])?>
+                </div>
+
+    </div>
+
+<?=form_close();?>

@@ -135,7 +135,7 @@ class Course_Model extends CI_Model {
     }
 
 
-    public function course_apply($a_name, $a_surname, $a_dob, $a_idnumber, $a_address, $a_mobile, $a_email, $a_nationality, $a_mqf, $tbl_courses_id) {
+    public function course_apply($a_name, $a_surname, $a_dob, $a_idnumber, $a_address, $a_mobile, $a_email, $a_nationality, $tbl_courses_id) {
 
         $data = array(
             'a_name'            => $a_name,
@@ -146,7 +146,6 @@ class Course_Model extends CI_Model {
             'a_mobile'          => $a_mobile,
             'a_email'           => $a_email,
             'a_nationality'     => $a_nationality,
-            'a_mqf'             => $a_mqf,
             'tbl_courses_id'    => $tbl_courses_id
         );
 

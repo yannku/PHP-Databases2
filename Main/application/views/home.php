@@ -1,13 +1,13 @@
 
 
-    
+
             <div class="row">
                 <div class="col-sm-12">
                     <p class="welcome" >Institute of Creative Arts</p>
                 </div>
             </div>
             <div class="row justify-content-center about">
-                <div class="col-sm-10 about">
+                <div class="col-sm-8 about">
                     <div class="center">
                         <img src="Images\solid_normal.png" alt="">
                         <p>About the Institute of Creative Arts</p>
@@ -29,7 +29,7 @@
             <div class="row">
 
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('courses/courses');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
+                        <a href="<?=site_url('courses');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
                             <div class="overlay">
                                 <p class="text">View Courses</p>
 
@@ -48,7 +48,7 @@
 
 
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('courses/course_app');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
+                        <a href="<?=site_url('capply');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
                             <div class="overlay">
                                 <p class="text">Apply for a course</p>
 
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('jobs/all_jobs');?>"><img src="<?=base_url('Images\3d modelling2.jpg')?>" alt="">
+                        <a href="<?=site_url('job_list');?>"><img src="<?=base_url('Images\3d modelling2.jpg')?>" alt="">
                             <div class="overlay">
                                 <p class="text">Join us</p>
 

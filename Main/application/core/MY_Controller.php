@@ -20,6 +20,18 @@ class MY_Controller extends CI_Controller {
 
 	}
 
+    function build_back($pages = NULL, $data = NULL) {
+
+		$start = array(
+			'nav'		=> $this->nav_links()
+		);
+
+		$this->load->view('templates/backheader', $start);
+		$this->load->view($pages, $data);
+		$this->load->view('templates/backfooter');
+
+	}
+
     // Use an associative array for the navigation
 	function nav_links() {
 		return array(

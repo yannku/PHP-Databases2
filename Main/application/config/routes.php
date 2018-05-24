@@ -61,4 +61,21 @@ $route['register/submit'] = 'system/register_submit';
 
 $route['logout'] = 'system/logout';
 
+
+$route['add_course'] = 'courses/course_form';
+$route['add_course/submit'] = 'courses/course_submit';
+
+$route['applications'] = 'courses/applications';
+
+$route['capply'] = 'courses/app_form';
+$route['capply/submit'] = 'courses/app_submit';
+
+$route['add_job'] = 'jobs/job_form';
+$route['add_job/submit'] = 'jobs/job_submit';
+
+$route['job_list'] = 'jobs/all_jobs_public';
+$route['courses'] = 'courses/course_list';
+$route['course_list'] = 'courses/courses';
+$route['jobs_directory'] = 'jobs/all_jobs';
+
 //$route['what/link/i/want'] = "system/function";

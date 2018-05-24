@@ -12,7 +12,6 @@
 			<th scope="col">Mobile</th>
 			<th scope="col">Email</th>
 			<th scope="col">Nationality</th>
-			<th scope="col">MQF</th>
 			<th scope="col">Course id</th>
 			<th scope="col">View</th>
 		</tr>
@@ -29,7 +28,6 @@
 			<td><?=$app['a_mobile'];?></td>
 			<td><?=$app['a_email'];?></td>
 			<td><?=$app['a_nationality'];?></td>
-			<td><?=$app['a_mqf'];?></td>
 			<td><?=$app['tbl_courses_id'];?></td>
 			<td><?=anchor("", "View");?></td>
 

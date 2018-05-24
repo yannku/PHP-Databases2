@@ -7,6 +7,7 @@
 
             <?php endforeach; ?>
 
+            <?php echo form_dropdown('roles',$dropdown,'3',array('class' => 'form-control')); ?>
             <?=form_button($buttons['submit'])?>
 
         <?=form_close();?>
