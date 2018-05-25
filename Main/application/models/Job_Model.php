@@ -137,4 +137,8 @@ class Job_Model extends CI_Model {
         return $this->db->get_where('tbl_job', $data)->num_rows() == 0;
 
     }
+    public function delete_job($id)
+    {
+        $this->db->delete('tbl_job', array('id' => $id));
+    }
 }

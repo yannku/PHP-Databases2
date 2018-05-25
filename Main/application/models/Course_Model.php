@@ -157,4 +157,8 @@ class Course_Model extends CI_Model {
         return $this->db->insert_id();
 
     }
+    public function delete_course($id)
+    {
+        $this->db->delete('tbl_courses', array('id' => $id));
+    }
 }

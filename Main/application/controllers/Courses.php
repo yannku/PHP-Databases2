@@ -338,5 +338,12 @@ class Courses extends MY_Controller {
         $this->build('apply', $data);
 
 	}
+    public function delete($id)
+    {
+        // to make this work, in the page/html/php list
+        // anchor('courses/delete/id', 'Delete')
+        $this->course_model->delete_course($id);
+        redirect('courses');
+    }
 
 }
