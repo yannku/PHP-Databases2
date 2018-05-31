@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|css|images|js|upload|ViewerJS)
+RewriteRule ^(.*)$ index.php\/$1 [L]
+
+php_value upload_max_filesize 10M
+php_value post_max_size 100M
