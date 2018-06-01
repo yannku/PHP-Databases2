@@ -400,4 +400,13 @@ class Courses extends MY_Controller {
         redirect('courses');
     }
 
+    public function application_delete($id)
+    {
+        $this->load->model('course_model');
+        // to make this work, in the page/html/php list
+        // anchor('courses/delete/id', 'Delete')
+        $this->course_model->delete_application($id);
+        redirect('applications');
+    }
+
 }

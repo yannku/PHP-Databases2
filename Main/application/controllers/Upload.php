@@ -53,5 +53,20 @@ class Upload extends MY_Controller {
             $this->build('forms');
         }
 
+        public function uploadform(){
+
+            $this->build('upload_form');
+        }
+
+        public function timetable(){
+
+            $this->build('timetable');
+        }
+
+        public function calender(){
+
+            $this->build('calender');
+        }
+
 }
 ?>

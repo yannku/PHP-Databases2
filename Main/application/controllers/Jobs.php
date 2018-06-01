@@ -234,9 +234,10 @@ class Jobs extends MY_Controller {
 
 	public function delete($id)
 	{
+		$this->load->model('job_model');
 		// to make this work, in the page/html/php list
 		// anchor('courses/delete/id', 'Delete')
-		$this->job_model->delete_course($id);
+		$this->job_model->delete_job($id);
 		redirect('jobs');
 	}
 

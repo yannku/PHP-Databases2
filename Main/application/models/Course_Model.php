@@ -161,4 +161,9 @@ class Course_Model extends CI_Model {
     {
         $this->db->delete('tbl_courses', array('id' => $id));
     }
+
+    public function delete_application($id)
+    {
+        $this->db->delete('tbl_courseapp', array('id' => $id));
+    }
 }

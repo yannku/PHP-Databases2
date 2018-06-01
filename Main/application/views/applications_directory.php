@@ -13,7 +13,7 @@
 			<th scope="col">Email</th>
 			<th scope="col">Nationality</th>
 			<th scope="col">Course id</th>
-			<th scope="col">View</th>
+			<th scope="col">Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -29,7 +29,7 @@
 			<td><?=$app['a_email'];?></td>
 			<td><?=$app['a_nationality'];?></td>
 			<td><?=$app['tbl_courses_id'];?></td>
-			<td><?=anchor("", "View");?></td>
+			<td><?=anchor("courses/application_delete/{$app['id']}", "Delete");?></td>
 
 		</tr>
 <?php endforeach; ?>
