@@ -205,4 +205,27 @@ class System extends MY_Controller {
         #3. take the user home
         redirect('/');
     }
+
+    public function courses() {
+
+        // load the database and model
+        $this->load->model('system_model');
+
+        // set the page data
+        $data = array(
+            'users'		=> $this->system_model->all_users()
+        );
+
+        // build the page
+        $this->build_back('user_directory', $data);
+    }
+
+    public function delete($id)
+    {
+        $this->load->model('system_model');
+        // to make this work, in the page/html/php list
+        // anchor('courses/delete/id', 'Delete')
+        $this->system_model->delete_user($id);
+        redirect('register');
+    }
 }
