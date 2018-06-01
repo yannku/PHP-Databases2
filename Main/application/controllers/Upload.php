@@ -48,5 +48,10 @@ class Upload extends MY_Controller {
             }
         }
 
+        public function forms(){
+
+            $this->build('forms');
+        }
+
 }
 ?>

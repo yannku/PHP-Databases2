@@ -13,6 +13,22 @@
                 </div>
 
 <?php endforeach; ?>
+<?= form_textarea($Description) ?>
+                <div class="spacing">
+
+                </div>
+<?= form_textarea($Requirments) ?>
+                <div class="spacing">
+
+                </div>
+<?= form_textarea($Study_units) ?>
+                <div class="spacing">
+
+                </div>
+<?= form_textarea($Carrier_opportunities) ?>
+                <div class="spacing">
+
+                </div>
 
 <?=form_button($buttons['submit'])?>
             </div>

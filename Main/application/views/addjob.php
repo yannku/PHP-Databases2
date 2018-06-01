@@ -14,6 +14,9 @@
 
 <?php endforeach; ?>
 <?php echo form_dropdown('jobs',$dropdown,'',array('class' => 'form-control')); ?>
+                <div class="spacing">
+
+                </div>
 <?=form_button($buttons['submit'])?>
             </div>
 

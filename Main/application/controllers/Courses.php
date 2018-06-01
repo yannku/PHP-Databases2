@@ -60,8 +60,10 @@ class Courses extends MY_Controller {
 
         $this->load->model('course_model');
 
+
         $data = array(
-			'course'		=> $this->course_model->get_course($id)
+			'course'		=> $this->course_model->get_course($id),
+            'info'          => read_xml('courses/'.$id.'courseinfo.xml')
 		);
 
         $this->build('course', $data);
@@ -113,8 +115,11 @@ class Courses extends MY_Controller {
 	}
 
 
+
+
     public function course_submit() {
 		//this will show a 404 error if there is no data in the form
+        $this->load->helper('basic_xml');
 		if ($this->input->method() != "post") {
 			show_404();
 			return;
@@ -128,6 +133,7 @@ class Courses extends MY_Controller {
 			return;
 		}
 
+
         $c_name         	 = $this->input->post('c_name');
         $c_code          	 = $this->input->post('c_code');
         $c_duration      	 = $this->input->post('c_duration');
@@ -138,6 +144,23 @@ class Courses extends MY_Controller {
 
         $id = $this->course_model->add_courses($c_name, $c_code, $c_duration, $c_mqf);
         // upload image here
+        $data = array(
+
+            # This key is optional, used to define what kind of data you're writing.
+            'root'      => 'course',
+
+            # The structured information goes here.
+            'data'      => array(
+
+                'Requirments'                   => $this->input->post('c_req'),
+                'Study_units'                   => $this->input->post('c_units'),
+                'Carrier_opportunities'         => $this->input->post('c_job'),
+                'Description'                   => $this->input->post('c_desc')
+
+            )
+        );
+
+        write_xml($data, 'courses/'.$id.'courseinfo.xml');
 
         redirect('/');
 	}
@@ -242,8 +265,38 @@ class Courses extends MY_Controller {
                         'name'          => 'c_mqf',
                         'id'            => 'input-mqf',
                         'class'         => 'form-control'
-                    )
+                    ),
+
                 ),
+                'Description'          => array(
+                    'type'          => 'text',
+                    'placeholder'   => 'Course Description',
+                    'name'          => 'c_desc',
+                    'id'            => 'input-desc',
+                    'class'         => 'form-control'
+                ),
+                'Requirments'          => array(
+                    'type'          => 'text',
+                    'placeholder'   => 'Course Requirments',
+                    'name'          => 'c_req',
+                    'id'            => 'input-req',
+                    'class'         => 'form-control'
+                ),
+                'Study_units'          => array(
+                    'type'          => 'text',
+                    'placeholder'   => 'Course Study Units',
+                    'name'          => 'c_units',
+                    'id'            => 'input-mqf',
+                    'class'         => 'form-control'
+                ),
+                'Carrier_opportunities'          => array(
+                    'type'          => 'text',
+                    'placeholder'   => 'Course Carrier Opportunities',
+                    'name'          => 'c_job',
+                    'id'            => 'input-mqf',
+                    'class'         => 'form-control'
+                ),
+
                     'buttons'       => array(
                         'submit'        => array(
                             'type'          => 'submit',
@@ -255,12 +308,12 @@ class Courses extends MY_Controller {
 
             $this->build_back('addcourse', $data);
 
-
             }
 
     public function app_form() {
         $this->load->model('course_model');
-	       $data = array(
+
+            $data = array(
                'form_action'   => 'capply/submit',
                'form_inputs'          => array(
         			'Name' => array(
@@ -340,6 +393,7 @@ class Courses extends MY_Controller {
 	}
     public function delete($id)
     {
+        $this->load->model('course_model');
         // to make this work, in the page/html/php list
         // anchor('courses/delete/id', 'Delete')
         $this->course_model->delete_course($id);

@@ -78,4 +78,5 @@ $route['courses'] = 'courses/course_list';
 $route['course_list'] = 'courses/courses';
 $route['jobs_directory'] = 'jobs/all_jobs';
 
+
 //$route['what/link/i/want'] = "system/function";

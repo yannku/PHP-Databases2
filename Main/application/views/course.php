@@ -11,8 +11,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-8">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut efficitur leo. Donec quis orci vitae nibh imperdiet viverra. Etiam eget vestibulum ex. Nullam pretium tempus elit.
-                    Mauris fermentum, ex quis condimentum rutrum, nisi sem tincidunt diam, vel placerat urna mauris facilisis velit. Sed eu arcu varius, vehicula justo nec, blandit neque. Sed facilisis ligula in arcu dapibus lacinia.</p>
+                  <p><?=$info['Description'];?></p>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -34,4 +33,15 @@
                       </tr>
                      </tbody>
                 </table>
+             </div>
+             <div class="row justify-content-center">
+                <div class="col-sm-8">
+                    <h4>Requirments</h4>
+                    <p><?=str_replace(PHP_EOL,'<br>', $info['Requirments']);?></p>
+                    <h4>Study Units</h4>
+                    <p><?=str_replace(PHP_EOL,'<br>', $info['Study_units']);?></p>
+                    <h4>Carrier opportunities</h4>
+                    <p><?=str_replace(PHP_EOL,'<br>', $info['Carrier_opportunities']);?></p>
+
+                </div>
              </div>

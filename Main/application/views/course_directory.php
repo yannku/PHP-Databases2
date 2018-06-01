@@ -10,6 +10,7 @@
 			<th scope="col">MQF Level</th>
 			<th scope="col">Edit</th>
 			<th scope="col">View</th>
+			<th scope="col">Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -22,6 +23,7 @@
 			<td><?=$course['c_mqf'];?></td>
 			<td><?=anchor("courses/edit_course/{$course['id']}", "Edit");?></td>
 			<td><?=anchor("courses/view_course/{$course['id']}", "View");?></td>
+			<td><?=anchor("courses/delete/{$course['id']}", "Delete");?></td>
 		</tr>
 <?php endforeach; ?>
 
