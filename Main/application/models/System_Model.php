@@ -123,7 +123,7 @@ class System_Model extends CI_Model {
     public function delete_session($id, $code)
     {
         $data = array(
-            'user_id'  => $id,
+            'tbl_Login_id' => $id,
             'persistence'  => $code
         );
 
@@ -149,20 +149,5 @@ class System_Model extends CI_Model {
 
 	}
 
-    public function all_users() {
 
-        // these lines are preparing the
-        // query to be run.
-        $this->db->select('*')
-                 ->order_by('role_id', 'asc');
-
-        // run the query using the parameters
-        // above and below.
-        return $this->db->get('tbl_login');
-    }
-
-    public function delete_user($id)
-    {
-        $this->db->delete('tbl_login', array('id' => $id));
-    }
 }

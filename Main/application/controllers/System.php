@@ -91,6 +91,115 @@ class System extends MY_Controller {
 
 	}
 
+    public function userform($action = 'edituserSubmit', $user = NULL){
+
+        if ($user == NULL)
+        {
+            $user= array(
+                    'name'              => NULL,
+                    'surname'           => NULL,
+                    'email'             => NULL,
+                    'about'             => NULL,
+                    'mobile'            => NULL
+            );
+        }
+            $session = $this->session->userdata;
+            $id = $session['id'];
+            $userData = $this->user->set_user($id);
+
+	       $data = array(
+               'form_action'          => $action,
+               'form_inputs'          => array(
+                   'Id'          => array(
+                       'type'          => 'hidden',
+                       'placeholder'   => 'id',
+                       'name'          => 'id',
+                       'id'            => 'input-name',
+                       'class'         => 'form-control',
+                       'value'         => $id
+                   ),
+                    'Name'          => array(
+                        'type'          => 'text',
+                        'placeholder'   => 'Name',
+                        'name'          => 'name',
+                        'id'            => 'input-name',
+                        'class'         => 'form-control',
+                        'value'         => $userData['name']
+                    ),
+                    'Surname'          => array(
+                        'type'          => 'text',
+                        'placeholder'   => 'Surname',
+                        'name'          => 'surname',
+                        'id'            => 'input-surname',
+                        'class'         => 'form-control',
+                        'value'         => $userData['surname']
+                    ),
+                    'Email'          => array(
+                        'type'          => 'email',
+                        'placeholder'   => 'Email',
+    					'name'          => 'email',
+                        'id'            => 'input-email',
+                        'class'         => 'form-control',
+                        'value'         => $userData['email']
+                    ),
+
+                    'Mobile'          => array(
+                        'type'          => 'number',
+                        'placeholder'   => 'Mobile',
+                        'name'          => 'mobile',
+                        'id'            => 'input-mobile',
+                        'class'         => 'form-control',
+                        'value'         => $userData['mobile']
+                    )
+                ),
+                'About'          => array(
+                    'type'          => 'text',
+                    'placeholder'   => 'Desribe your self and what your interests are',
+                    'name'          => 'about',
+                    'id'            => 'input-About',
+                    'class'         => 'form-control',
+                    'value'         => $userData['about']
+                ),
+                    'buttons'       => array(
+                        'submit'        => array(
+                            'type'          => 'submit',
+                            'content'       => 'Update',
+                            'class'         => "btn btn-dark"
+                        )
+                    )
+            );
+
+            $this->build_back('edituser', $data);
+
+
+            }
+
+    public function editUserSubmit()
+    {
+        $session = $this->session->userdata;
+        $id = $session['id'];
+
+        $name         	    = $this->input->post('name');
+        $surname        	= $this->input->post('surname');
+        $email      	    = $this->input->post('email');
+        $mobile             = $this->input->post('mobile');
+        $about   			= $this->input->post('about');
+        //$this->user->set_user($id);
+        if ($this->fv->run('userform') === FALSE) {
+			echo validation_errors();
+			return;
+		}
+
+        // update the user
+		if (!$this->user->update_user($id, $name, $surname, $email, $about, $mobile)) {
+			$this->fv->set_error('form', 'This info could not be updated.');
+			$this->userform($id);
+			return;
+		}
+
+        redirect('edituser');
+    }
+
     # The Login Submission page
     public function login_submit()
     {
@@ -139,7 +248,7 @@ class System extends MY_Controller {
         $this->session->set_userdata($data);
 
         #10. Redirect home
-        redirect('home/success');
+        redirect('register');
     }
 
     # The Register Submission page
@@ -193,6 +302,7 @@ class System extends MY_Controller {
     # The logout page
     public function logout()
     {
+
         #1. remove login data  from database
         $data = $this->session->userdata;
         $this->system->delete_session($data['id'], $data['session_code']);
@@ -203,17 +313,14 @@ class System extends MY_Controller {
         ));
 
         #3. take the user home
-        redirect('/');
+        redirect('login');
     }
 
-    public function courses() {
-
-        // load the database and model
-        $this->load->model('system_model');
+    public function users() {
 
         // set the page data
         $data = array(
-            'users'		=> $this->system_model->all_users()
+            'users'		=> $this->user->all_users()
         );
 
         // build the page
@@ -222,10 +329,9 @@ class System extends MY_Controller {
 
     public function delete($id)
     {
-        $this->load->model('system_model');
         // to make this work, in the page/html/php list
         // anchor('courses/delete/id', 'Delete')
-        $this->system_model->delete_user($id);
+        $this->user->delete_user($id);
         redirect('register');
     }
 }

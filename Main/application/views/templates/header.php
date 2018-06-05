@@ -23,17 +23,16 @@
                 <label class="closebtn" for="toggle-sidenav">&times;</label>
                 <a href="<?=site_url('home');?>">Home</a>
                 <a href="<?=site_url('courses');?>">Courses</a>
-                <a href="map.html">Map</a>
+                <a href="<?=site_url('timetables');?>">Timetables</a>
                 <a href="students.html">Our Students</a>
                 <label class="dropdown-btn" data-toggle="#student-links">Student links
                     <i class="fas fa-caret-down"></i>
                 </label>
                 <div class="dropdown-container" id="student-links">
                   <a href="http://mcast.edu.mt/searchOurCatalogue">Library</a>
-                  <a href="timetable.html">Timetables</a>
                   <a href="#">Academic Links</a>
-                  <a href="forms.html">Forms</a>
-                  <a href="calender.html">Academic Calendar</a>
+                  <a href="<?=site_url('forms');?>">Forms</a>
+                  <a href="<?=site_url('calendar');?>">Academic Calendar</a>
                   <a href="sick.html">Cancelled Lectures</a>
                 </div>
                 <a href="<?=site_url('job_list');?>">Vacancies</a>

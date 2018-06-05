@@ -17,30 +17,11 @@
 <?php foreach ($nav as $page => $url): ?>
 		<?=anchor($url, $page);?>
 <?php endforeach; ?>
-        <input type="checkbox" id="toggle-sidenav" class="hidden">
-            <label class="sidenav-bg" for="toggle-sidenav"></label>
-            <div id="mySidenav" class="sidenav">
-                <label class="closebtn" for="toggle-sidenav">&times;</label>
-                <a href="<?=site_url('home/index');?>">Home</a>
-                <a href="<?=site_url('add_course');?>">Add Courses</a>
-                <a href="<?=site_url('course_list');?>">Courses</a>
-                <a href="<?=site_url('applications');?>">Applications</a>
-                <a href="map.html">Utilities</a>
-                <a href="students.html">Students</a>
-                <a href="<?=site_url('add_job');?>">Add Vacancies</a>
-                <a href="<?=site_url('jobs_directory');?>">Vacancies</a>
-                <a href="<?=site_url('register');?>">Register</a>
-                <a href="<?=site_url('users');?>">Users</a>
-            </div>
-
 
             <nav class="navbar fixed-top bg-light">
                 <div class="container-fluid topnav">
 
                     <div class="navbar-left d-flex align-items-center">
-                        <label class="navbar-toggler m-0 p-0 "  for="toggle-sidenav">
-                            <i class="icon fas fa-bars"></i>
-                        </label>
                         <div class="navbar-brand m-0 p-0">
                             <a href="index.html"><img class="logo" src="<?=base_url('Images\solid_normal.png')?>" alt=""></a>
                         </div>
@@ -48,7 +29,7 @@
 
                     <div class="nav navbar-nav navbar-right">
                         <div class="dropdown">
-                            <button class="btn btn-dark"><?=anchor("logout", "Logout");?></button>
+                            <button class="btn btn-dark">Log out</button>
 
                         </div>
 

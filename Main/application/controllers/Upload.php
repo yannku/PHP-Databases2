@@ -63,7 +63,7 @@ class Upload extends MY_Controller {
             $this->build('timetable');
         }
 
-        public function calender(){
+        public function calendar(){
 
             $this->build('calender');
         }

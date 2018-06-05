@@ -131,42 +131,33 @@ $config = array(
             'label' => 'role',
             'rules' => 'required'
         )
+    ),
+    'userform'      => array(
+        array(
+            'field' => 'name',
+            'label' => 'First Name',
+            'rules' => 'required|min_length[3]'
+        ),
+        array(
+            'field' => 'surname',
+            'label' => 'Last Name',
+            'rules' => 'required|min_length[3]'
+        ),
+        array(
+            'field' => 'mobile',
+            'label' => 'Mobile Number',
+            'rules' => 'required|regex_match[/^[0-9]{8}$/]'
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'required|valid_email|is_unique[tbl_courseapp.a_email]'
+        ),
+        array(
+            'field' => 'about',
+            'label' => 'About',
+            'rules' => 'required'
+        )
     )
-    /*'edit_course'   => array(
-        $c_name = $this->input->post('c_name');
-		if (!empty($c_name)) {
-            $rules[] = array(
-				'field' => 'c_name',
-				'label' => 'Course name',
-				'rules' => 'required|is_unique[tbl_courses.c_name]'
-			);
-		}
 
-		$c_code = $this->input->post('c_code');
-		if (!empty($c_code)) {
-            $rules[] = array(
-				'field' => 'c_code',
-				'label' => 'Course code',
-				'rules' => 'required|min_length[5]'
-			);
-		}
-
-		$c_duration = $this->input->post('c_duration');
-		if (!empty($c_duration)) {
-            $rules[] = array(
-				'field' => 'c_duration',
-				'label' => 'Duration',
-				'rules' => 'required'
-			);
-		}
-
-		$c_mqf = $this->input->post('c_mqf');
-		if (!empty($c_mqf)) {
-            $rules[] = array(
-				'field' => 'c_mqf',
-				'label' => 'MQF',
-				'rules' => 'required'
-			);
-		}
-    )*/
 );
