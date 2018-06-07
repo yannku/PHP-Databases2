@@ -95,6 +95,38 @@ class User_Model extends CI_Model {
                  ->get('tbl_login');
     }
 
+    public function all_students() {
+
+        // these lines are preparing the
+        // query to be run.
+        return $this->db->select('tbl_login.id,
+                            tbl_roles.name AS role,
+                            tbl_userdetails.name,
+                            tbl_userdetails.surname')
+
+                 ->join('tbl_userdetails', 'tbl_userdetails.tbl_Login_id = tbl_login.id', 'left')
+                 ->join('tbl_roles','tbl_roles.id = tbl_login.role_id', 'left')
+                 ->where('role_id', 3)
+                 ->get('tbl_login');
+    }
+
+    public function get_student($id) {
+
+        // these lines are preparing the
+        // query to be run.
+        return $this->db->select('tbl_login.id,
+                            tbl_login.email,
+                            tbl_roles.name AS role,
+                            tbl_userdetails.name,
+                            tbl_userdetails.surname,
+                            tbl_userdetails.mobile,
+                            tbl_userdetails.about')
+
+                 ->join('tbl_userdetails', 'tbl_userdetails.tbl_Login_id = tbl_login.id', 'left')
+                 ->join('tbl_roles','tbl_roles.id = tbl_login.role_id', 'left')
+                 ->where('id', $id)
+                 ->get('tbl_login');
+    }
 
 
     public function update_user($id, $name, $surname, $email, $about, $mobile) {

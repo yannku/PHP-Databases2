@@ -2,11 +2,11 @@
     <div class="row">
 
         <div class="col-sm-3">
-            <img src='uploads\images\<?=$users['id'];?>.jpg' class="porprof" alt="">
+            <img src='uploads\images\<?=$student['id'];?>.jpg' class="porprof" alt="">
 
         </div>
         <div class="col-sm-9">
-            <h5 class="name"><?=$users['name'];?> <?=$users['surname'];?></h5>
+            <h5 class="name"><?=$student['name'];?> <?=$users['surname'];?></h5>
             <p class="info"> <?=$users['about'];?></p>
             <div class="coninfo">
                 <i class="fas fa-envelope-square"></i>
@@ -16,10 +16,7 @@
                 <i class="fas fa-phone-square"></i>
                 <p class="email"><?=$users['mobile'];?></p>
             </div>
-            <button type="button" class="btn btn-dark"><?=anchor("edituser", "Edit profile",array('class' => 'click' ) )?></button>
-            <button type="button" class="btn btn-dark"><?=anchor("portfolioupload/form", "Upload images",array('class' => 'click' ) )?></button>
-            <button type="button" class="btn btn-dark"><?=anchor("index.php/upload", "Change profile picture",array('class' => 'click' ) )?></button>
-            <button type="button" class="btn btn-dark"><?=anchor("index.php/upload", "Publish",array('class' => 'click' ) )?></button>
+
         </div>
         </div>
 

@@ -327,6 +327,27 @@ class System extends MY_Controller {
         $this->build_back('user_directory', $data);
     }
 
+    public function students() {
+
+        // set the page data
+        $data = array(
+            'students'		=> $this->user->all_students()
+        );
+
+        // build the page
+        $this->build('students', $data);
+    }
+
+    public function view_student($id) {
+
+        $data = array(
+			'student'		=> $this->user->get_student($id)
+		);
+
+        $this->build('studentportfolio', $data);
+
+    }
+
     public function delete($id)
     {
         // to make this work, in the page/html/php list

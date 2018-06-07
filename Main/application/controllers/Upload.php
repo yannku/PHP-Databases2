@@ -14,7 +14,9 @@ class Upload extends MY_Controller {
             $this->load->view('upload_form', array('error' => ' ' ));
         }
 
-        public function do_upload($name) {
+        public function do_upload() {
+            $name = $this->session->userdata('id');
+
             $config['file_name']            = $name;
             $config['upload_path']          = './uploads/images/';
             $config['allowed_types']        = 'gif|jpg|png';
@@ -55,7 +57,7 @@ class Upload extends MY_Controller {
 
         public function uploadform(){
 
-            $this->build('upload_form');
+            $this->load->view('upload_form', array('error' => ' ' ));
         }
 
         public function timetable(){

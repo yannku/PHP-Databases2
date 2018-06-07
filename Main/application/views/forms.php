@@ -10,7 +10,7 @@
         <p>Artistic work release form</p>
     </div>
     <div class="col-sm-2">
-        <button type="button" name="button" class="btn btn-dark"><a href="<?=base_url('/ViewerJS/#../uploads/pdf/Artistic-Work-Release-Form.pdf')?>">View</a></button>
+        <button type="button" name="button" class="btn btn-dark "><a class="click" href="<?=base_url('/ViewerJS/#../uploads/pdf/Artistic-Work-Release-Form.pdf')?>">View</a></button>
     </div>
 </div>
 <div class="row justify-content-center">
@@ -18,7 +18,7 @@
         <p>Children release form</p>
     </div>
     <div class="col-sm-2">
-        <button type="button" name="button" class="btn btn-dark"><a href="<?=base_url('/ViewerJS/#../uploads/pdf/Children-Release-Form.pdf')?>">View</a></button>
+        <button type="button" name="button" class="btn btn-dark"><a class="click" href="<?=base_url('/ViewerJS/#../uploads/pdf/Children-Release-Form.pdf')?>">View</a></button>
     </div>
 </div>
 <div class="row justify-content-center">
@@ -26,7 +26,7 @@
         <p>Location release form</p>
     </div>
     <div class="col-sm-2">
-        <button type="button" name="button" class="btn btn-dark"><a href="<?=base_url('/ViewerJS/#../uploads/pdf/Location-Release-Form.pdf')?>">View</a></button>
+        <button type="button" name="button" class="btn btn-dark"><a class="click" href="<?=base_url('/ViewerJS/#../uploads/pdf/Location-Release-Form.pdf')?>">View</a></button>
     </div>
 </div>
 <div class="row justify-content-center">
@@ -34,7 +34,7 @@
         <p>Talent release form</p>
     </div>
     <div class="col-sm-2">
-        <button type="button" name="button" class="btn btn-dark"><a href="<?=base_url('/ViewerJS/#../uploads/pdf/Talent-Release-Form.pdf')?>">View</a></button>
+        <button type="button" name="button" class="btn btn-dark"><a class="click" href="<?=base_url('/ViewerJS/#../uploads/pdf/Talent-Release-Form.pdf')?>">View</a></button>
     </div>
 </div>
 <div class="row justify-content-center">
@@ -42,6 +42,6 @@
         <p>Other release forms</p>
     </div>
     <div class="col-sm-2">
-        <button type="button" name="button" class="btn btn-dark"><?=anchor('http://www.mcast.edu.mt/180', 'View'); ?></button>
+        <button type="button" name="button" class="btn btn-dark"><?=anchor('http://www.mcast.edu.mt/180', 'View', array('class' => 'click' )); ?></button>
     </div>
 </div>
