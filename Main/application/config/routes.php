@@ -87,6 +87,6 @@ $route['edituser'] = 'system/userform';
 $route['edituserSubmit'] = 'system/editUserSubmit';
 $route['delete_user/(:num)'] = 'system/delete/$1';
 $route['students'] = 'system/students';
-$route['student_portfolio'] = 'system/view_student';
+$route['student_portfolio/(:num)'] = 'system/view_student/$1';
 
 //$route['what/link/i/want'] = "system/function";

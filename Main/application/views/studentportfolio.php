@@ -2,19 +2,19 @@
     <div class="row">
 
         <div class="col-sm-3">
-            <img src='uploads\images\<?=$student['id'];?>.jpg' class="porprof" alt="">
+            <img src='<?=base_url("uploads/images/{$student['id']}.jpg")?>' class="porprof" alt="">
 
         </div>
         <div class="col-sm-9">
-            <h5 class="name"><?=$student['name'];?> <?=$users['surname'];?></h5>
-            <p class="info"> <?=$users['about'];?></p>
+            <h5 class="name"><?=$student['name'];?> <?=$student['surname'];?></h5>
+            <p class="info"> <?=$student['about'];?></p>
             <div class="coninfo">
                 <i class="fas fa-envelope-square"></i>
-                <p class="email"><?=$users['email'];?></p>
+                <p class="email"><?=$student['email'];?></p>
             </div>
             <div class="coninfo">
                 <i class="fas fa-phone-square"></i>
-                <p class="email"><?=$users['mobile'];?></p>
+                <p class="email"><?=$student['mobile'];?></p>
             </div>
 
         </div>
@@ -31,12 +31,7 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-4">
-<?php foreach ($image as $img): ?>
 
-    <img src="uploads\images\<?=$users['id']{$i}?>.*" alt="">
-
-
-<?php endforeach; ?>
                         <img src="<?=base_url('uploads\portfolio\4_0.jpg')?>" alt="">
 
                     </div>

@@ -345,6 +345,7 @@ class System extends MY_Controller {
 		);
 
         $this->build('studentportfolio', $data);
+        
 
     }
 

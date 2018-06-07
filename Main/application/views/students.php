@@ -12,7 +12,7 @@
 		<div class="  col-sm-4 bck">
 	        <a href=""><img src='uploads\images\<?=$student['id'];?>.jpg' alt="">
 	            <div class="overlay">
-	                <p class="text"><?=anchor("student_portfolio/{$student['id']}"," {$student['name']} {$student['surname']} ", array('class' => 'name'));?></p>
+	                <p class=""><?=anchor("student_portfolio/{$student['id']}"," {$student['name']} {$student['surname']} ", array('class' => 'name'));?></p>
 
 	            </div>
 	        </a>

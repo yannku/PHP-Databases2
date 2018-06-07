@@ -124,8 +124,10 @@ class User_Model extends CI_Model {
 
                  ->join('tbl_userdetails', 'tbl_userdetails.tbl_Login_id = tbl_login.id', 'left')
                  ->join('tbl_roles','tbl_roles.id = tbl_login.role_id', 'left')
-                 ->where('id', $id)
-                 ->get('tbl_login');
+                 ->where('tbl_login.id', $id)
+                 ->get('tbl_login')
+                 ->row_array();
+
     }
 
 
