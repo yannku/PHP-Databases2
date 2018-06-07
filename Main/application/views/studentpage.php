@@ -16,7 +16,8 @@
                         <i class="fas fa-phone-square"></i>
                         <p class="email"><?=$users['mobile'];?></p>
                     </div>
-                    <button type="button" class="btn btn-dark"><?=anchor("edituser", "Edit profile");?></button>
+                    <button type="button" class="btn btn-dark"><?=anchor("edituser", "Edit profile",array('class' => 'click' ) )?></button>
+                    <button type="button" class="btn btn-dark"><?=anchor("portfolioupload/form", "Upload images",array('class' => 'click' ) )?></button>
                 </div>
                 </div>
 

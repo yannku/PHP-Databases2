@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PortfolioUpload extends MY_Controller {
 #multiple file upload
-function form()
+public function form()
     {
         $this->load->helper(['form', 'url']);
 
@@ -13,19 +13,20 @@ function form()
                     'type'          => 'file',
                     'name'          => 'images[]',
                     'multiple'      => NULL,
-                    'accept-type'   => 'image/*'
+                    'accept-type'   => 'image/*',
+                    
                 )
             )
         );
 
-        $this->load->view('portfolio-upload', $data);
+        $this->build_users('portfolio-upload', $data);
     }
 
     function submit()
 {
 
-    $user_id = 1; // this can come from the session.
-    
+    $user_id = $this->session->userdata('id'); // this can come from the session.
+
     # Configuration - generic for all images to upload.
     $config['upload_path']      = './uploads/portfolio/';
     $config['allowed_types']    = 'gif|jpg|png';
