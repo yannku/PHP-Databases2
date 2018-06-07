@@ -345,7 +345,7 @@ class System extends MY_Controller {
 		);
 
         $this->build('studentportfolio', $data);
-        
+
 
     }
 
@@ -359,7 +359,8 @@ class System extends MY_Controller {
 
     public function studentpage(){
         $data =array(
-            'users' => $this->session->all_userdata()
+            'users' => $this->session->all_userdata(),
+
         );
 
         $this->build_users('studentpage', $data);

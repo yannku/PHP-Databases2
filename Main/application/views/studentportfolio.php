@@ -31,15 +31,13 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-4">
-
-                        <img src="<?=base_url('uploads\portfolio\4_0.jpg')?>" alt="">
-
+                        <img src='<?=base_url("uploads/portfolio/{$student['id']}_0.jpg")?>' alt="">
                     </div>
                     <div class="col-sm-4">
-                        <img src="Images\website.png" alt="">
+                        <img src='<?=base_url("uploads/portfolio/{$student['id']}_1.jpg")?>' alt="">
                     </div>
                     <div class="col-sm-4">
-                        <img src="Images\website.png" alt="">
+                        <img src='<?=base_url("uploads/portfolio/{$student['id']}_2.jpg")?>' alt="">
                     </div>
 
                 </div>
