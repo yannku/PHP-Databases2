@@ -169,7 +169,7 @@ class System extends MY_Controller {
                     )
             );
 
-            $this->build_back('edituser', $data);
+            $this->build_users('edituser', $data);
 
 
             }
@@ -332,6 +332,14 @@ class System extends MY_Controller {
         // to make this work, in the page/html/php list
         // anchor('courses/delete/id', 'Delete')
         $this->user->delete_user($id);
-        redirect('register');
+        redirect('users');
+    }
+
+    public function studentpage(){
+        $data =array(
+            'users' => $this->session->all_userdata()
+        );
+
+        $this->build_users('studentpage', $data);
     }
 }

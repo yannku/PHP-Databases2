@@ -1,5 +1,5 @@
 
-
+<button type="button" class="btn btn-dark"><?=anchor("student_page", "Back to profile");?></button>
           <div class="row justify-content-center">
 
             <div class="col-sm-6">

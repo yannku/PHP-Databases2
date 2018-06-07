@@ -29,7 +29,7 @@
 
                     <div class="nav navbar-nav navbar-right">
                         <div class="dropdown">
-                            <button class="btn btn-dark">Log out</button>
+                            <button class="btn btn-dark"><?=anchor("logout", "Logout", array('class' => 'click'));?></button>
 
                         </div>
 

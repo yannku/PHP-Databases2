@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
 
     <div class="col-sm-2">
-        <button type="button" name="button"class="btn btn-dark"><a href="<?=base_url('/ViewerJS/#../uploads/timetable/Timetable.pdf')?>">View Timetables</a></button>
+        <button type="button" name="button"class="btn btn-dark "><a class="click" href="<?=base_url('/ViewerJS/#../uploads/timetable/Timetable.pdf')?>">View Timetables</a></button>
     </div>
 </div>
 

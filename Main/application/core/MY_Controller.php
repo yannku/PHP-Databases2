@@ -32,6 +32,18 @@ class MY_Controller extends CI_Controller {
 
 	}
 
+    function build_users($pages = NULL, $data = NULL) {
+
+		$start = array(
+			'nav'		=> $this->nav_links()
+		);
+
+		$this->load->view('templates/userheader', $start);
+		$this->load->view($pages, $data);
+		$this->load->view('templates/userfooter');
+
+	}
+
     // Use an associative array for the navigation
 	function nav_links() {
 		return array(
@@ -66,5 +78,5 @@ class MY_Controller extends CI_Controller {
         return TRUE;
 
     }
-    
+
 }

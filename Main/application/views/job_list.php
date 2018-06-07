@@ -17,7 +17,7 @@
 			<p><?=$job['j_desc'];?> </p>
 		</div>
 		<div class="col-sm-4">
-			<button type="button" name="button" class="btn btn-dark"><?=anchor("{$job['j_url']}", "View", array('class' => ''));?></button>
+			<button type="button" name="button" class="btn btn-dark"><?=anchor("{$job['j_url']}", "View", array('class' => 'click'));?></button>
 
 		</div>
 

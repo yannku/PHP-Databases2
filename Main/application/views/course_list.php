@@ -27,7 +27,7 @@
 
 <?php endforeach; ?>
 
-		<button type="button" name="Apply" class="btn btn-dark"><?=anchor("course_app", "Apply for a course");?></button>
+		<button type="button" name="Apply" class="btn btn-dark"><?=anchor("course_app", "Apply for a course", array('class' => 'click'));?></button>
 
 	</tbody>
 </table>

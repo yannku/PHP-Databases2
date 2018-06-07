@@ -78,10 +78,12 @@ $route['courses'] = 'courses/course_list';
 $route['course_list'] = 'courses/courses';
 $route['jobs_directory'] = 'jobs/all_jobs';
 $route['users'] = 'system/users';
+$route['student_page'] = 'system/studentpage';
 
 $route['calendar'] = 'upload/calendar';
 $route['timetables'] = 'upload/timetable';
 $route['forms'] = 'upload/forms';
 $route['edituser'] = 'system/userform';
 $route['edituserSubmit'] = 'system/editUserSubmit';
+$route['delete_user/(:num)'] = 'system/delete/$1';
 //$route['what/link/i/want'] = "system/function";

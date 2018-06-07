@@ -36,6 +36,8 @@ class User_Model extends CI_Model {
     # Deletes a user from the database
     public function delete_user($id)
     {
+        // these lines are preparing the
+        // query to be run.
         $this->db->delete('tbl_login', array('id' => $id));
     }
 
@@ -80,12 +82,17 @@ class User_Model extends CI_Model {
 
         // these lines are preparing the
         // query to be run.
-        $this->db->select('*')
-                 ->order_by('role_id', 'asc');
+        return $this->db->select('tbl_login.id,
+                            tbl_login.email,
+                            tbl_roles.name AS role,
+                            tbl_userdetails.name,
+                            tbl_userdetails.surname,
+                            tbl_userdetails.mobile,
+                            tbl_userdetails.about')
 
-        // run the query using the parameters
-        // above and below.
-        return $this->db->get('tbl_login');
+                 ->join('tbl_userdetails', 'tbl_userdetails.tbl_Login_id = tbl_login.id', 'left')
+                 ->join('tbl_roles','tbl_roles.id = tbl_login.role_id', 'left')
+                 ->get('tbl_login');
     }
 
 

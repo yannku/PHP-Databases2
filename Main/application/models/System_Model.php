@@ -84,6 +84,8 @@ class System_Model extends CI_Model {
                                     tbl_login.email,
                                     tbl_userdetails.name,
                                     tbl_userdetails.surname,
+                                    tbl_userdetails.about,
+                                    tbl_userdetails.mobile,
                                     tbl_login_info.persistence AS session_code')
                                 ->join('tbl_userdetails', 'tbl_userdetails.	tbl_Login_id = tbl_login.id', 'left')
                                 ->join('tbl_login_info', 'tbl_login_info.tbl_Login_id = tbl_login.id', 'left')

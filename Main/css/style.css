@@ -257,7 +257,7 @@ form .input-group {
 }
 
 .btn-dark:hover {
-    background-color: #BA74BB;
+    background-color: #cb96cc;
     border: none;
     color: #f3f3f3;
 }
@@ -283,6 +283,16 @@ form .input-group {
 
 .form-group .spacing {
     padding: 1em;
+}
+
+.click {
+    text-decoration: none;
+    color: white;
+}
+
+.click:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .stdcourse {
