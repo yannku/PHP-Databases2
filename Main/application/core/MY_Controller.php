@@ -5,6 +5,7 @@ class MY_Controller extends CI_Controller {
 
     function __construct() {
         parent:: __construct();
+
 	}
 
     // We can use this to replace $this->load->view
@@ -76,6 +77,37 @@ class MY_Controller extends CI_Controller {
 
         #we don't have to check the data
         return TRUE;
+
+    }
+
+    private function can_access()
+    {
+        #use codeignitor's router to get the controller page
+        #class = controllers   method= function
+        $cont = $this ->router->class;
+        $page = $this->router->method;
+
+        $check = $this->check_login();
+
+        #checkfor every page I have to be logged in or out
+        #$check = logged in
+        #$cont = controller
+        if($check && $cont == 'system' && $page != 'logout')
+        {
+            redirect('register');
+        }
+        else if($check && $cont == 'home' && $page == 'index')
+        {
+            redirect('home/success');
+        }
+        else if(!$check && $cont != 'system' && ($cont == 'home' && $page != 'index'))
+        {
+            redirect('/');
+        }
+        else if(!$check && $cont == 'system' && $page == 'register')
+        {
+            redirect('/');
+        }
 
     }
 

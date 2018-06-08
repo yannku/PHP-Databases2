@@ -286,14 +286,14 @@ class Courses extends MY_Controller {
                     'type'          => 'text',
                     'placeholder'   => 'Course Study Units',
                     'name'          => 'c_units',
-                    'id'            => 'input-mqf',
+                    'id'            => 'input-unit',
                     'class'         => 'form-control'
                 ),
                 'Carrier_opportunities'          => array(
                     'type'          => 'text',
                     'placeholder'   => 'Course Carrier Opportunities',
                     'name'          => 'c_job',
-                    'id'            => 'input-mqf',
+                    'id'            => 'input-opp',
                     'class'         => 'form-control'
                 ),
 

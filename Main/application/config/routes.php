@@ -74,7 +74,7 @@ $route['add_job'] = 'jobs/job_form';
 $route['add_job/submit'] = 'jobs/job_submit';
 
 $route['job_list'] = 'jobs/all_jobs_public';
-$route['courses'] = 'courses/course_list';
+$route['ica_courses'] = 'courses/course_list';
 $route['course_list'] = 'courses/courses';
 $route['jobs_directory'] = 'jobs/all_jobs';
 $route['users'] = 'system/users';

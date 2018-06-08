@@ -22,7 +22,7 @@
             <div id="mySidenav" class="sidenav">
                 <label class="closebtn" for="toggle-sidenav">&times;</label>
                 <a href="<?=site_url('home');?>">Home</a>
-                <a href="<?=site_url('courses');?>">Courses</a>
+                <a href="<?=site_url('ica_courses');?>">Courses</a>
                 <a href="<?=site_url('timetables');?>">Timetables</a>
                 <a href="<?=site_url('students');?>">Our Students</a>
                 <label class="dropdown-btn" data-toggle="#student-links">Student links

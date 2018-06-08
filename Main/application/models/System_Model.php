@@ -117,7 +117,7 @@ class System_Model extends CI_Model {
         );
 
         return $this->db->select('tbl_login.id')
-                       ->join('tbl_login_info', 'tbl_login_info.user_id = tbl_login.id','left')
+                       ->join('tbl_login_info', 'tbl_login_info.tbl_Login_id = tbl_login.id','left')
                         ->get_where('tbl_login', $data)
                         ->num_rows() == 1;
     }

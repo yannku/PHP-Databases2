@@ -103,11 +103,6 @@ $config = array(
             'field' => 'c_mqf',
             'label' => 'MQF Level',
             'rules' => 'required'
-        ),
-        array(
-            'field' => 'courses',
-            'label' => 'role',
-            'rules' => 'required'
         )
     ),
     'job_form'   => array(
@@ -151,7 +146,7 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'Email',
-            'rules' => 'required|valid_email|is_unique[tbl_courseapp.a_email]'
+            'rules' => 'required|valid_email'
         ),
         array(
             'field' => 'about',

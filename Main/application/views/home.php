@@ -29,17 +29,17 @@
             <div class="row">
 
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('courses');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
+                        <a href="<?=site_url('ica_courses');?>"><img src="<?=base_url('Images\Courses.jpg')?>" alt="">
                             <div class="overlay">
-                                <p class="text">View Courses</p>
+                                <p class="name">View Courses</p>
 
                             </div>
                         </a>
                     </div>
                     <div class="  col-sm-3 bck">
-                        <a href="portfolio.html"><img src="<?=base_url('Images\3d modelling2.jpg')?>" alt="">
+                        <a href="<?=site_url('students');?>"><img src="<?=base_url('Images\Student.jpg')?>" alt="">
                             <div class="overlay">
-                                <p class="text">Our Students</p>
+                                <p class="name">Our Students</p>
 
                             </div>
                         </a>
@@ -48,17 +48,17 @@
 
 
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('capply');?>"><img src="<?=base_url('Images\3d modelling.jpg')?>" alt="">
+                        <a href="<?=site_url('capply');?>"><img src="<?=base_url('Images\apply.jpg')?>" alt="">
                             <div class="overlay">
-                                <p class="text">Apply for a course</p>
+                                <p class="name">Apply for a course</p>
 
                             </div>
                         </a>
                     </div>
                     <div class="  col-sm-3 bck">
-                        <a href="<?=site_url('job_list');?>"><img src="<?=base_url('Images\3d modelling2.jpg')?>" alt="">
+                        <a href="<?=site_url('job_list');?>"><img src="<?=base_url('Images\Join_us.jpg')?>" alt="">
                             <div class="overlay">
-                                <p class="text">Join us</p>
+                                <p class="name">Join us</p>
 
                             </div>
                         </a>
