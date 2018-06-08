@@ -295,6 +295,16 @@ form .input-group {
     color: white;
 }
 
+.cor_name {
+    text-decoration: none;
+    color: #c385c3;
+}
+
+.cor_name:hover {
+    text-decoration: none;
+    color: #d4a7d4;
+}
+
 .stdcourse {
     display: flex;
     padding-left: 0;

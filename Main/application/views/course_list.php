@@ -10,7 +10,7 @@
 	<tbody>
 
 <?php foreach($courses->result_array() as $course): ?>
-	<h5><?=anchor("courses/view_course/{$course['id']}", "{$course['c_name']}", array('class' => 'name'));?></h5>
+	<h5><?=anchor("courses/view_course/{$course['id']}", "{$course['c_name']}", array('class' => 'cor_name'));?></h5>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
